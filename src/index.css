@@ -9,3 +9,26 @@
 
   --color-brand: #f7d000;
 }
+
+@theme {
+  --animate-spin-slow: spin-slow 7s linear infinite;
+
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@layer utilities {
+  .animation-paused {
+    animation-play-state: paused;
+  }
+
+  .animation-running {
+    animation-play-state: running;
+  }
+}
