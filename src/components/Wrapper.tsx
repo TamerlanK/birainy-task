@@ -4,7 +4,6 @@ import clsx from "clsx"
 interface WrapperProps {
   children: React.ReactNode
   className?: string
-  width?: string
 }
 
 const Wrapper = ({ children, className }: WrapperProps) => {

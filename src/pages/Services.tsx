@@ -113,6 +113,7 @@ const ServicesPage = () => {
       tabTitle = selectedTab.name
       tabContent = selectedTab.content
       dynamicContent = (
+        // dinamik kontenti əvəz etmək üçün min-h-screen istifadə olunur
         <div className="min-h-screen">
           <h3 className="text-lg font-semibold mb-2">{selectedTab.name}</h3>
           <p>{selectedTab.content}</p>
@@ -130,27 +131,29 @@ const ServicesPage = () => {
   }
 
   return (
-    <section className="overflow-hidden">
+    <section>
       <Wrapper>
         <StarIcon />
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="max-w-3xl">
-            <h1 className="text-6xl font-source-code-pro mt-10 font-semibold">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-source-code-pro mt-10 font-semibold">
               Xidmətlərimiz
             </h1>
-            <p className="text-balance text-gray-500 font-space-grotesk mt-7">
+            <p className="text-balance text-gray-500 font-space-grotesk mt-7 text-base sm:text-lg">
               Şirkət daxilindəki prosesləri və müştərilərlə əlaqəni
               avtomatlaşdırılmış şəkildə həyata keçirtmək və bazarda innovativ
               şəkildə inkişaf etmək üçün bizim xidmətlərdən yararlanın.
             </p>
           </div>
-          <OrderIcon />
+          <div className="w-full md:w-auto">
+            <OrderIcon />
+          </div>
         </div>
 
-        <div className="w-full grid grid-cols-3 py-10 gap-12 border-t mt-10">
-          {/* SIDEBAR - Accordion */}
-          <div className="col-span-3 md:col-span-1">
-            <div className="sticky top-10 max-h-screen">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 py-10 gap-12 border-t mt-10">
+          {/* ACCORDİON */}
+          <div className="col-span-1">
+            <div className="md:sticky md:top-10">
               <div className="space-y-4">
                 {servicesData.map((service: Service) => {
                   const isActive = activeService === service.id
@@ -159,7 +162,7 @@ const ServicesPage = () => {
                   return (
                     <div
                       key={service.id}
-                      className="bg-gray-100 rounded-lg font-source-code-pro"
+                      className="bg-gray-100 rounded-lg font-source-code-pro hover:border-brand border-1 border-transparent transition duration-300"
                     >
                       <button
                         onClick={() => handleServiceClick(service.id)}
@@ -201,8 +204,8 @@ const ServicesPage = () => {
             </div>
           </div>
 
-          {/* MAIN CONTENT */}
-          <div className="col-span-3 md:col-span-2">
+          {/* MAİN CONTENT */}
+          <div className="col-span-1 md:col-span-2">
             {selectedService && (
               <ServiceTabLayout title={tabTitle} content={tabContent}>
                 {dynamicContent}
