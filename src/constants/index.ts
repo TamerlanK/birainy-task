@@ -90,6 +90,7 @@ export const servicesData: Service[] = [
     title: "Saytların yaradılması",
     content:
       "Şirkətlərin vizyonuna uyğun olaraq sayt hazırlayırıq. Sayt trendə uyğun olaraq dizaynerlərimiz tərəfindən dizayn edilir. HTML5, CSS, JS (react js., vue js., angular js.) kimi proqramlaşdırma dilləri ilə son texnologiyalardan istifadə edərək piksel dəqiqliyində kodlaşdırılıb müxtəlif ölçülü mobil və digər cihazlara uyğunlaşdırılır. Sonda qurulmuş sayt üçün sistem arxitekturası yaradılır və maksimum sürətli işləməsi təmin edilir.",
+    tabs: [],
   },
   {
     id: 3,
